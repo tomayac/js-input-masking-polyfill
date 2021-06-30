@@ -1,6 +1,6 @@
 {
   "name": "js-input-masking-polyfill",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A polyfill for the Intl.InputMask proposal.",
   "main": "./dist/index.js",
   "browser": "./dist/index.js",
