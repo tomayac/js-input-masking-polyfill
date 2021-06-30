@@ -1,7 +1,7 @@
 {
   "name": "js-input-masking-polyfill",
   "version": "0.0.1",
-  "description": "Polyfill for the Int.InputMask proposal",
+  "description": "Polyfill for the Intl.InputMask proposal",
   "main": "./src/index.js",
   "scripts": {
     "start": "npx http-server",
