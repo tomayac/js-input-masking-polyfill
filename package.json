@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "npx http-server",
-    "fix": "npx prettier --write ."
+    "fix": "npx prettier --write .",
+    "build": "shx rm -rf ./dist && shx mkdir ./dist && terser --compress --mangle --module -- ./src/index --output ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "http-server": "^0.12.3",
     "prettier": "^2.3.2",
+    "shx": "^0.3.3",
     "terser": "^5.7.1"
   }
 }

@@ -1,4 +1,4 @@
-import '../src/intl-inputmask-polyfill.js'
+import '../src/index.js'
 
 document.querySelector('input').addEventListener('input', (e) => {
   e.target.value = new Intl.InputMask('credit-card-number').format(e.target.value);
