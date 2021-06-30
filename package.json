@@ -1,6 +1,6 @@
 {
   "name": "js-input-masking-polyfill",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A polyfill for the Intl.InputMask proposal.",
   "main": "./dist/index.js",
   "browser": "./dist/index.js",
@@ -13,7 +13,7 @@
     "start": "npx http-server",
     "fix": "npx prettier --write .",
     "clean": "shx rm -rf ./dist && shx mkdir ./dist",
-    "build": "npm run clean && terser --compress --mangle --module --output ./dist/index.js -- ./src/index.js && terser --compress --mangle --module --output ./dist/credit-card-number.js -- ./src/credit-card-number.js",
+    "build": "npm run clean && npm run fix && terser --compress --mangle --module --output ./dist/index.js -- ./src/index.js && terser --compress --mangle --module --output ./dist/credit-card-number.js -- ./src/credit-card-number.js",
     "prepare": "npm run build"
   },
   "files": [

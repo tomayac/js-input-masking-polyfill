@@ -3,20 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello World!</title>
+    <title>Intl.InputMask Demo</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>"
+    />
     <script src="./script.js" type="module"></script>
   </head>
   <body>
-    <h1><code>Intl.InputMask</code> Demo</h1>
+    <h1><code>Intl.InputMask</code> 🎭 Demo</h1>
+
+    <p>
+      A polyfill for the
+      <a href="https://github.com/tomayac/js-input-masking"
+        ><code>Intl.InputMask</code></a
+      >
+      🎭 proposal.
+    </p>
 
     <h2><code>Intl.InputMask("credit-card-number").format()</code></h2>
+
+    <p>
+      There are commonly agreed-on rules how credit card numbers should be
+      formatted. Try it with one of the test credit card numbers below. Note
+      that this does not <em>verify</em> credit card numbers for validity, it
+      purely <em>masks</em> them according to the rules for each credit card
+      vendor.
+    </p>
+    <p>
+      (Needless to say: no information you enter is shared with the server.)
+    </p>
 
     <label
       >Enter your credit card number: <input name="credit-card" maxlength="19"
     /></label>
 
+    <button type="button">Clear</button>
+
     <h2>Credit card test numbers</h2>
+
+    <p>The test numbers below are masked with this library.</p>
 
     <table>
       <thead>
@@ -84,5 +111,12 @@
         </tr>
       </tbody>
     </table>
+
+    <p>
+      Built by <a href="https://twitter.com/tomayac">@tomayac</a>. Source code
+      <a href="https://github.com/tomayac/js-input-masking-polyfill"
+        >on GitHub</a
+      >.
+    </p>
   </body>
 </html>

@@ -2,7 +2,15 @@
   color-scheme: dark light;
 }
 
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
+  width: 60ch;
+  max-width: 60ch;
   font-family: system-ui, sans-serif;
 }
 
@@ -12,6 +20,10 @@ h1 {
 
 h2 {
   color: steelblue;
+}
+
+a {
+  color: red;
 }
 
 code {
