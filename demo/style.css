@@ -11,6 +11,7 @@ html {
 body {
   width: 60ch;
   max-width: 60ch;
+  font-size: 100%;
   font-family: system-ui, sans-serif;
 }
 
@@ -24,6 +25,12 @@ h2 {
 
 a {
   color: red;
+}
+
+input,
+button,
+label {
+  font-size: inherit;
 }
 
 code {
