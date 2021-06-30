@@ -18,7 +18,7 @@ import formatCreditCardNumber from './credit-card-number.js';
     }
 
     if (this.type === 'credit-card-number') {
-      return formatCreditCardNumber(value).trim();
+      return formatCreditCardNumber(value);
     }
   };
 
