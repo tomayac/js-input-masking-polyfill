@@ -6,7 +6,7 @@ const formatInternationalBankAccountNumber = (value) => {
   if (!value) {
     return '';
   }
-  // All other cards (4-4-4).
+  // Groups of four.
   return value
     .match(/\w{1,4}/g)
     .join(' ')
