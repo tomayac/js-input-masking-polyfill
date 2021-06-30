@@ -1,4 +1,5 @@
 import formatCreditCardNumber from './credit-card-number.js';
+import formatInternationalBankAccountNumber from './international-bank-account-number.js';
 
 (() => {
   const supported = 'InputMask' in Intl;
@@ -19,6 +20,9 @@ import formatCreditCardNumber from './credit-card-number.js';
 
     if (this.type === 'credit-card-number') {
       return formatCreditCardNumber(value);
+    }
+    if (this.type === 'international-bank-account-number') {
+      return formatInternationalBankAccountNumber(value);
     }
   };
 

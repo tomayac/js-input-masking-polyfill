@@ -22,26 +22,28 @@
       🎭 proposal.
     </p>
 
-    <h2><code>Intl.InputMask("credit-card-number").format()</code></h2>
-
     <p>
-      There are commonly agreed-on rules how credit card numbers should be
-      formatted. Try it with one of the test credit card numbers below. Note
-      that this does not <em>verify</em> credit card numbers for validity, it
-      purely <em>masks</em> them according to the rules for each credit card
-      vendor.
+      There are commonly agreed-on rules how things like credit card numbers or
+      International Bank Account Numbers (IBAN) should be formatted. Try the
+      demo with one of the numbers below. Note that this does not
+      <em>verify</em> the numbers for validity, it purely <em>masks</em> them
+      according to the rules for each type.
     </p>
     <p>
       (Needless to say: no information you enter is shared with the server.)
     </p>
 
-    <label
-      >Enter your credit card number: <input name="credit-card" maxlength="19"
-    /></label>
+    <h2><code>Intl.InputMask("credit-card number").format()</code></h2>
 
-    <button type="button">Clear</button>
+    <form>
+      <label
+        >Enter your credit card number:
+        <input name="credit-card" maxlength="19"
+      /></label>
+      <button class="credit-card-clear" type="button">Clear</button>
+    </form>
 
-    <h2>Credit card test numbers</h2>
+    <h3>Credit card test numbers</h3>
 
     <p>The test numbers below are masked with this library.</p>
 
@@ -55,59 +57,96 @@
       <tbody>
         <tr>
           <td>American Express</td>
-          <td class="credit-card-number">378282246310005</td>
+          <td class="credit-card number">378282246310005</td>
         </tr>
         <tr>
           <td>American Express</td>
-          <td class="credit-card-number">371449635398431</td>
+          <td class="credit-card number">371449635398431</td>
         </tr>
         <tr>
           <td>American Express Corporate</td>
-          <td class="credit-card-number">378734493671000</td>
+          <td class="credit-card number">378734493671000</td>
         </tr>
         <tr>
           <td>Australian BankCard</td>
-          <td class="credit-card-number">5610591081018250</td>
+          <td class="credit-card number">5610591081018250</td>
         </tr>
         <tr>
           <td>Diners Club</td>
-          <td class="credit-card-number">30569309025904</td>
+          <td class="credit-card number">30569309025904</td>
         </tr>
         <tr>
           <td>Diners Club</td>
-          <td class="credit-card-number">38520000023237</td>
+          <td class="credit-card number">38520000023237</td>
         </tr>
         <tr>
           <td>Discover</td>
-          <td class="credit-card-number">6011111111111117</td>
+          <td class="credit-card number">6011111111111117</td>
         </tr>
         <tr>
           <td>Discover</td>
-          <td class="credit-card-number">6011000990139424</td>
+          <td class="credit-card number">6011000990139424</td>
         </tr>
         <tr>
           <td>JCB</td>
-          <td class="credit-card-number">3530111333300000</td>
+          <td class="credit-card number">3530111333300000</td>
         </tr>
         <tr>
           <td>JCB</td>
-          <td class="credit-card-number">3566002020360505</td>
+          <td class="credit-card number">3566002020360505</td>
         </tr>
         <tr>
           <td>MasterCard</td>
-          <td class="credit-card-number">5555555555554444</td>
+          <td class="credit-card number">5555555555554444</td>
         </tr>
         <tr>
           <td>MasterCard</td>
-          <td class="credit-card-number">5105105105105100</td>
+          <td class="credit-card number">5105105105105100</td>
         </tr>
         <tr>
           <td>Visa</td>
-          <td class="credit-card-number">4111111111111111</td>
+          <td class="credit-card number">4111111111111111</td>
         </tr>
         <tr>
           <td>Visa</td>
-          <td class="credit-card-number">4012888888881881</td>
+          <td class="credit-card number">4012888888881881</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>
+      <code>Intl.InputMask("international-bank-account-number").format()</code>
+    </h2>
+
+    <form>
+      <label
+        >Enter your International Bank Account Number (IBAN):
+        <input name="iban" maxlength="34"
+      /></label>
+      <button class="iban-clear" type="button">Clear</button>
+    </form>
+
+    <h3>IBAN test numbers</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>IBAN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Germany</td>
+          <td class="iban number">DE75512108001245126199</td>
+        </tr>
+        <tr>
+          <td>United Kingdom</td>
+          <td class="iban number">GB33BUKB20201555555555</td>
+        </tr>
+        <tr>
+          <td>Spain</td>
+          <td class="iban number">ES7921000813610123456789</td>
         </tr>
       </tbody>
     </table>

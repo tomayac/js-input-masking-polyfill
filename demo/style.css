@@ -27,6 +27,11 @@ a {
   color: red;
 }
 
+.anchor {
+  text-decoration: none;
+  margin-inline-start: 0.5rem;
+}
+
 input,
 button,
 label {
@@ -48,6 +53,6 @@ th {
   text-align: left;
 }
 
-.credit-card-number {
+.number {
   font-variant-numeric: tabular-nums;
 }
