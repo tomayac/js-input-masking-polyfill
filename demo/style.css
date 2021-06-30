@@ -22,7 +22,7 @@ td,
 th {
   outline: solid 1px CanvasText;
   outline-offset: -1px;
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
 th {
