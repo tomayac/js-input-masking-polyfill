@@ -1,0 +1,34 @@
+:root {
+  color-scheme: dark light;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  color: cornflowerblue;
+}
+
+h2 {
+  color: steelblue;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+}
+
+td,
+th {
+  outline: solid 1px CanvasText;
+  outline-offset: -1px;
+  padding: .25rem;
+}
+
+th {
+  text-align: left;
+}
+
+.credit-card-number {
+  font-variant-numeric: tabular-nums;
+}
