@@ -1,19 +1,34 @@
 {
   "name": "js-input-masking-polyfill",
   "version": "0.0.1",
-  "description": "Polyfill for the Intl.InputMask proposal",
-  "main": "./src/index.js",
+  "description": "A polyfill for the Intl.InputMask proposal.",
+  "main": "./dist/index.js",
+  "browser": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "module": "./src/index.js",
   "scripts": {
     "start": "npx http-server",
     "fix": "npx prettier --write .",
-    "build": "shx rm -rf ./dist && shx mkdir ./dist && terser --compress --mangle --module -- ./src/index --output ./dist/index.js"
+    "clean": "shx rm -rf ./dist && shx mkdir ./dist",
+    "build": "npm run clean && terser --compress --mangle --module --output ./dist/index.js -- ./src/index.js && terser --compress --mangle --module --output ./dist/credit-card-number.js -- ./src/credit-card-number.js",
+    "prepare": "npm run build"
   },
+  "files": [
+    "./dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tomayac/js-input-masking-polyfill.git"
   },
   "keywords": [
-    "Intl.InputMask"
+    "intl.inputmask",
+    "intl",
+    "input masking",
+    "input mask",
+    "i18n"
   ],
   "author": "Thomas Steiner (tomac@google.com)",
   "license": "Apache-2.0",

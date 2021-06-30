@@ -1,10 +1,12 @@
 # js-input-masking-polyfill
 
-A polyfill for the [`Intl.InputMask`](https://github.com/tomayac/js-input-masking) 🎭 proposal.
+A polyfill for the
+[`Intl.InputMask`](https://github.com/tomayac/js-input-masking) 🎭 proposal.
 
 ## Status
 
-Unstable. Submitted as an [idea](https://es.discourse.group/t/input-masking/835) to TC39.
+Unstable. Submitted as an [idea](https://es.discourse.group/t/input-masking/835)
+to TC39.
 
 ## Installation
 
