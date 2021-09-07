@@ -6,7 +6,7 @@ const ibanInput = document.querySelector('[name="iban"]');
 const ibanButton = document.querySelector('.iban-clear');
 const inputs = document.querySelectorAll('input');
 
-inputs.forEach(input => {
+inputs.forEach((input) => {
   input.addEventListener('paste', (e) => {
     const maxLength = input.maxLength;
     input.maxLength = '';
@@ -16,7 +16,7 @@ inputs.forEach(input => {
 });
 
 creditCardInput.addEventListener('input', (e) => {
-  console.log(e)
+  console.log(e);
   // Save the caret position.
   let caretPos = creditCardInput.selectionStart;
   const value = e.target.value;

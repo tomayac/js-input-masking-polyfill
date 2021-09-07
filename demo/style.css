@@ -32,6 +32,10 @@ a {
   margin-inline-start: 0.5rem;
 }
 
+input {
+  width: 40ch;
+}
+
 input,
 button,
 label {

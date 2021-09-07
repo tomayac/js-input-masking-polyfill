@@ -36,11 +36,11 @@
     <h2><code>Intl.InputMask("credit-card number").format()</code></h2>
 
     <form>
-      <label
-        >Enter your credit card number:
-        <input name="credit-card" maxlength="19"
-      /></label>
-      <button class="credit-card-clear" type="button">Clear</button>
+      <label for="credit-card">Enter your credit card number: </label>
+      <div>
+        <input id="credit-card" name="credit-card" maxlength="19" />
+        <button class="credit-card-clear" type="button">Clear</button>
+      </div>
     </form>
 
     <h3>Credit card test numbers</h3>
@@ -119,11 +119,13 @@
     </h2>
 
     <form>
-      <label
+      <label for="iban"
         >Enter your International Bank Account Number (IBAN):
-        <input name="iban" maxlength="34"
-      /></label>
-      <button class="iban-clear" type="button">Clear</button>
+      </label>
+      <div>
+        <input id="iban" name="iban" maxlength="34" />
+        <button class="iban-clear" type="button">Clear</button>
+      </div>
     </form>
 
     <h3>IBAN test numbers</h3>
