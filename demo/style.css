@@ -21,6 +21,11 @@ h1 {
 
 h2 {
   color: steelblue;
+  display: inline;
+}
+
+details {
+  margin-block-end: 3rem;
 }
 
 a {
@@ -38,7 +43,8 @@ input {
 
 input,
 button,
-label {
+label,
+select {
   font-size: inherit;
 }
 

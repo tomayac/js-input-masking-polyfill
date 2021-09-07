@@ -1,5 +1,6 @@
 import formatCreditCardNumber from './credit-card-number.js';
 import formatInternationalBankAccountNumber from './international-bank-account-number.js';
+import formatPhoneNumber from './phone-number.js';
 
 (() => {
   const supported = 'InputMask' in Intl;
@@ -23,6 +24,9 @@ import formatInternationalBankAccountNumber from './international-bank-account-n
     }
     if (this.type === 'international-bank-account-number') {
       return formatInternationalBankAccountNumber(value);
+    }
+    if (this.type === 'phone-number') {
+      return formatPhoneNumber(value, this.options);
     }
   };
 

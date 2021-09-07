@@ -4,10 +4,16 @@ const creditCardInput = document.querySelector('[name="credit-card"]');
 const creditCardButton = document.querySelector('.credit-card-clear');
 const ibanInput = document.querySelector('[name="iban"]');
 const ibanButton = document.querySelector('.iban-clear');
+const phoneInput = document.querySelector('[name="phone"]');
+const phoneButton = document.querySelector('.phone-clear');
+const countrySelect = document.querySelector('#country');
 const inputs = document.querySelectorAll('input');
 
 inputs.forEach((input) => {
   input.addEventListener('paste', (e) => {
+    if (!(input.maxLength >= 0)) {
+      return;
+    }
     const maxLength = input.maxLength;
     input.maxLength = '';
     input.value = e.clipboardData.getData('text/plain');
@@ -16,7 +22,6 @@ inputs.forEach((input) => {
 });
 
 creditCardInput.addEventListener('input', (e) => {
-  console.log(e);
   // Save the caret position.
   let caretPos = creditCardInput.selectionStart;
   const value = e.target.value;
@@ -48,12 +53,36 @@ ibanInput.addEventListener('input', (e) => {
   ibanInput.selectionEnd = caretPos;
 });
 
+const phoneNumberInput = (e) => {
+  // Save the caret position.
+  let caretPos = phoneInput.selectionStart;
+  const value = phoneInput.value;
+  // Apply the input masking.
+  phoneInput.value = new Intl.InputMask('phone-number', {
+    locale: countrySelect.value,
+  }).format(phoneInput.value);
+  // Restore the caret position while neutralizing the masking.
+  if (value !== phoneInput.value) {
+    caretPos += phoneInput.value.length - value.length;
+  }
+  phoneInput.selectionStart = caretPos;
+  phoneInput.selectionEnd = caretPos;
+};
+
+countrySelect.addEventListener('change', phoneNumberInput);
+
+phoneInput.addEventListener('input', phoneNumberInput);
+
 creditCardButton.addEventListener('click', () => {
   creditCardInput.value = '';
 });
 
 ibanButton.addEventListener('click', () => {
   ibanInput.value = '';
+});
+
+phoneButton.addEventListener('click', () => {
+  phoneInput.value = '';
 });
 
 document.querySelectorAll('.credit-card').forEach((td) => {
@@ -66,6 +95,20 @@ document.querySelectorAll('.iban').forEach((td) => {
   td.textContent = new Intl.InputMask(
     'international-bank-account-number',
   ).format(td.textContent);
+});
+
+document.querySelectorAll('.phone').forEach((td) => {
+  let locale;
+  if (td.textContent.startsWith('+35')) {
+    locale = 'IE';
+  } else if (td.textContent.startsWith('+49')) {
+    locale = 'DE';
+  } else if (td.textContent.startsWith('+34')) {
+    locale = 'ES';
+  }
+  td.textContent = new Intl.InputMask('phone-number', {
+    locale,
+  }).format(td.textContent);
 });
 
 document.querySelectorAll('h2, h3').forEach((h2) => {

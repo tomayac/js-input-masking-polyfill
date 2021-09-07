@@ -38,6 +38,7 @@
   "homepage": "https://github.com/tomayac/js-input-masking-polyfill#readme",
   "devDependencies": {
     "http-server": "^13.0.1",
+    "libphonenumber-js": "^1.9.26",
     "prettier": "^2.3.2",
     "shx": "^0.3.3",
     "terser": "^5.7.2"
