@@ -4,8 +4,19 @@ const creditCardInput = document.querySelector('[name="credit-card"]');
 const creditCardButton = document.querySelector('.credit-card-clear');
 const ibanInput = document.querySelector('[name="iban"]');
 const ibanButton = document.querySelector('.iban-clear');
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+  input.addEventListener('paste', (e) => {
+    const maxLength = input.maxLength;
+    input.maxLength = '';
+    input.value = e.clipboardData.getData('text/plain');
+    input.maxLength = maxLength;
+  });
+});
 
 creditCardInput.addEventListener('input', (e) => {
+  console.log(e)
   // Save the caret position.
   let caretPos = creditCardInput.selectionStart;
   const value = e.target.value;
