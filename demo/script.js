@@ -22,6 +22,9 @@ inputs.forEach((input) => {
 });
 
 creditCardInput.addEventListener('input', (e) => {
+  if (e.inputType === 'deleteContentBackward') {
+    return;
+  }
   // Save the caret position.
   let caretPos = creditCardInput.selectionStart;
   const value = e.target.value;
@@ -38,6 +41,9 @@ creditCardInput.addEventListener('input', (e) => {
 });
 
 ibanInput.addEventListener('input', (e) => {
+  if (e.inputType === 'deleteContentBackward') {
+    return;
+  }
   // Save the caret position.
   let caretPos = ibanInput.selectionStart;
   const value = e.target.value;
@@ -54,6 +60,9 @@ ibanInput.addEventListener('input', (e) => {
 });
 
 const phoneNumberInput = (e) => {
+  if (e.inputType === 'deleteContentBackward') {
+    return;
+  }
   // Save the caret position.
   let caretPos = phoneInput.selectionStart;
   const value = phoneInput.value;
