@@ -1,4 +1,4 @@
-import { AsYouType } from 'https://unpkg.com/libphonenumber-js@1.9.26/index.es6.js?module';
+import { AsYouType } from './phone-data.js';
 
 const formatPhoneNumber = (value, options = {}) => {
   return new AsYouType(options?.locale).input(value).trim();

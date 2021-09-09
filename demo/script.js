@@ -7,6 +7,8 @@ const ibanButton = document.querySelector('.iban-clear');
 const phoneInput = document.querySelector('[name="phone"]');
 const phoneButton = document.querySelector('.phone-clear');
 const countrySelect = document.querySelector('#country');
+const isbnInput = document.querySelector('[name="isbn"]')
+const isbnButton = document.querySelector('.isbn-clear')
 const inputs = document.querySelectorAll('input');
 
 inputs.forEach((input) => {
@@ -85,6 +87,26 @@ countrySelect.addEventListener('change', phoneNumberInput);
 
 phoneInput.addEventListener('input', phoneNumberInput);
 
+isbnInput.addEventListener('input', (e) => {
+  if (e.inputType === 'deleteContentBackward') {
+    e.target.value = e.target.value.trim();
+    return;
+  }
+  // Save the caret position.
+  let caretPos = isbnInput.selectionStart;
+  const value = e.target.value;
+  // Apply the input masking.
+  e.target.value = new Intl.InputMask(
+    'isbn-number',
+  ).format(e.target.value);
+  // Restore the caret position while neutralizing the masking.
+  if (value !== e.target.value) {
+    caretPos += e.target.value.length - value.length;
+  }
+  isbnInput.selectionStart = caretPos;
+  isbnInput.selectionEnd = caretPos;
+});
+
 creditCardButton.addEventListener('click', () => {
   creditCardInput.value = '';
 });
@@ -95,6 +117,10 @@ ibanButton.addEventListener('click', () => {
 
 phoneButton.addEventListener('click', () => {
   phoneInput.value = '';
+});
+
+isbnButton.addEventListener('click', () => {
+  isbnInput.value = '';
 });
 
 document.querySelectorAll('.credit-card').forEach((td) => {
@@ -121,6 +147,12 @@ document.querySelectorAll('.phone').forEach((td) => {
   td.textContent = new Intl.InputMask('phone-number', {
     locale,
   }).format(td.textContent);
+});
+
+document.querySelectorAll('.isbn').forEach((td) => {
+  td.textContent = new Intl.InputMask(
+    'isbn-number',
+  ).format(td.textContent);
 });
 
 document.querySelectorAll('h2, h3').forEach((h2) => {

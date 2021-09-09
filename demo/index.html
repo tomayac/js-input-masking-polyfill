@@ -40,7 +40,7 @@
       </summary>
 
       <form>
-        <label for="credit-card">Enter your credit card number: </label>
+        <label for="credit-card">Enter your credit card number:</label>
         <div>
           <input id="credit-card" name="credit-card" maxlength="19" />
           <button class="credit-card-clear" type="button">Clear</button>
@@ -172,7 +172,7 @@
       </summary>
 
       <form>
-        <label for="phone">Enter your phone number: </label>
+        <label for="phone">Enter your phone number:</label>
         <div>
           <select id="country">
             <option selected value="US">🇺🇸 United States</option>
@@ -208,6 +208,47 @@
           <tr>
             <td>Spain</td>
             <td class="phone number">+34917486400</td>
+          </tr>
+        </tbody>
+      </table>
+    </details>
+
+    <details>
+      <summary>
+        <h2><code>Intl.InputMask("isbn-number").format()</code></h2>
+      </summary>
+
+      <form>
+        <label for="isbn">Enter an ISBN number:</label>
+        <div>
+          <input id="isbn" name="isbn" />
+          <button class="isbn-clear" type="button">Clear</button>
+        </div>
+      </form>
+
+      <h3>Test ISBN numbers</h3>
+
+      <p>The test numbers below are masked with this library.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Book title</th>
+            <th>ISBN number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gesammelte Werke 3. Logik der Forschung</td>
+            <td class="isbn number">9783161484100</td>
+          </tr>
+          <tr>
+            <td>Tage der Toten</td>
+            <td class="isbn number">9783518463406</td>
+          </tr>
+          <tr>
+            <td>Der Patriot</td>
+            <td class="isbn number">9783608504781</td>
           </tr>
         </tbody>
       </table>

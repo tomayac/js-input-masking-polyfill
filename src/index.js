@@ -1,6 +1,7 @@
 import formatCreditCardNumber from './credit-card-number.js';
 import formatInternationalBankAccountNumber from './international-bank-account-number.js';
 import formatPhoneNumber from './phone-number.js';
+import formatISBNNumber from './isbn-number.js';
 
 (() => {
   const supported = 'InputMask' in Intl;
@@ -27,6 +28,9 @@ import formatPhoneNumber from './phone-number.js';
     }
     if (this.type === 'phone-number') {
       return formatPhoneNumber(value, this.options);
+    }
+    if (this.type === 'isbn-number') {
+      return formatISBNNumber(value);
     }
   };
 
