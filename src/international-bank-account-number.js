@@ -10,6 +10,7 @@ const formatInternationalBankAccountNumber = (value) => {
   return value
     .match(/\w{1,4}/g)
     .join(' ')
+    .toUpperCase()
     .trim();
 };
 
